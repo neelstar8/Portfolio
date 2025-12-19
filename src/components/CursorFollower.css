@@ -1,0 +1,44 @@
+/* hide on mobile */
+@media (max-width: 768px) {
+  .cursor-trail-container {
+    display: none;
+  }
+}
+
+.cursor-trail-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* ENERGY SEGMENT */
+.cursor-segment {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 215, 0, 1),
+    transparent
+  );
+
+  transform-origin: left center;
+
+  box-shadow:
+    0 0 8px rgba(255, 215, 0, 0.9),
+    0 0 16px rgba(255, 215, 0, 0.6),
+    0 0 32px rgba(255, 215, 0, 0.3);
+
+  animation: fadeOut 2s ease-out forwards;
+}
+
+/* fade + shrink */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

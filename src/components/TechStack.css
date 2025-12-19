@@ -1,0 +1,84 @@
+.techstack {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.techstack h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.techstack h2 span {
+  background: linear-gradient(90deg, #5ea9ff, #4fd1c5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+
+
+.subtitle {
+  color: #b0b6c3;
+  max-width: 700px;
+  margin: 16px auto 40px;
+}
+
+/* FILTERS */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.filters button {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.filters button.active {
+  background: linear-gradient(135deg, #5ea9ff, #4fd1c5);
+  color: #fff;
+}
+
+/* GRID */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tech-card img {
+  width: 48px;
+  height: 48px;
+}

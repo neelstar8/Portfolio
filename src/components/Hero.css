@@ -1,0 +1,102 @@
+.hero {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px; /* 🔥 REQUIRED for 3D */
+}
+
+/* CARD */
+.hero-card {
+  width: 400px;
+  background: rgba(20, 20, 20, 0.85);
+  border: 1px solid #2a2a2a;
+  padding: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+}
+
+/* IMAGE FRAME */
+.image-frame {
+  padding: 10px;
+  border: 1px solid #333;
+  background: #000000;
+  transform: translateZ(20px);
+}
+.hero-content h4 {
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.image-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* NAME */
+.name-box {
+  margin-top: 16px;
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #333;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateZ(30px);
+}
+
+/* CONTENT */
+.hero-content {
+  margin-top: 18px;
+  transform: translateZ(25px);
+}
+
+.hero-content h4 {
+  color: #fff;
+  margin-bottom: 8px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.hero-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/* RIGHT SIDE TEXT */
+.hero-side-text {
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+}
+
+.typing-text {
+  color: #bbb;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+.cursor {
+  opacity: 0.6;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  50.01%, 100% {
+    opacity: 0;
+  }
+}
+

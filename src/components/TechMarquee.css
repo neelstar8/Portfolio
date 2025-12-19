@@ -1,0 +1,51 @@
+.tech-marquee {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.marquee-title {
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* CONTAINER */
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* MOVING TRACK */
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+/* CARD */
+.marquee-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+.marquee-card img {
+  width: 32px;
+  height: 32px;
+}
+
+/* INFINITE ANIMATION */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

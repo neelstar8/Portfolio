@@ -1,0 +1,159 @@
+/* FULLSCREEN OVERLAY */
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 8, 16, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* HUD CLOSE */
+.hud-close {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hud-close:hover {
+  opacity: 1;
+}
+
+/* SCAN SWEEP (BACKGROUND EFFECT) */
+.scan-sweep {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scan-sweep.run {
+  animation: sweep 1.2s ease-out;
+}
+
+@keyframes sweep {
+  0% {
+    left: -40%;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* CONTACT PANEL */
+.contact-panel {
+  width: 420px;
+  background: rgba(14, 17, 30, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 28px;
+  color: #e6e6e6;
+
+  opacity: 0;
+  transform: translateY(10px) scale(0.98);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.contact-panel.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* HEADINGS */
+.contact-panel h2 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.subtext {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.contact-panel input,
+.contact-panel textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #e6e6e6;
+  font-size: 14px;
+}
+
+.contact-panel input:focus,
+.contact-panel textarea:focus {
+  outline: none;
+  border-color: #9aa4ff;
+}
+
+/* BUTTON */
+.contact-panel button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #e6e6e6;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-panel button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* SUCCESS */
+.success-state {
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.success-state h2 {
+  margin-bottom: 6px;
+}
+
+.success-state p {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
