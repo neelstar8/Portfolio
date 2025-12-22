@@ -1,0 +1,204 @@
+/* ===============================
+   PROJECTS SECTION
+================================ */
+.projects-section {
+  padding: 100px 80px;
+}
+
+.projects-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+/* ===============================
+   GRID
+================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* ===============================
+   PROJECT CARD
+================================ */
+.project-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  min-height: 520px; /* UNIFORM HEIGHT */
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.45s ease;
+}
+
+/* Hover lift + depth */
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
+}
+
+/* Subtle neon glow */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(130, 120, 255, 0.25),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* ===============================
+   IMAGE (NO COMPRESSION)
+================================ */
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* KEY FIX */
+  overflow: hidden;
+  border-radius: 14px;
+  background: #000;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* crop, don’t stretch */
+  object-position: center;
+}
+
+
+.project-card:hover .project-image img {
+  transform: scale(1.06);
+}
+
+/* ===============================
+   TEXT CONTENT
+================================ */
+.project-card h3 {
+  margin-top: 14px;
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.project-card button {
+  margin-top: 18px;
+  padding: 12px 18px;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-card button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===============================
+   MODAL OVERLAY
+================================ */
+.project-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* ===============================
+   MODAL
+================================ */
+.project-modal {
+  background: #0f1220;
+  padding: 30px;
+  border-radius: 18px;
+  width: 560px;
+  max-width: 90%;
+  color: #ffffff;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
+
+/* ===============================
+   SLIDER
+================================ */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  gap: 14px;
+}
+
+.slider img {
+  width: 360px;
+  max-width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* Slider arrows */
+.slider button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+
+.slider button:hover {
+  opacity: 1;
+}

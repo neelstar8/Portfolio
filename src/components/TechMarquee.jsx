@@ -16,7 +16,9 @@ const companies = [
 
 export default function TechMarquee() {
   return (
+
     <section className="tech-marquee">
+
       <h3 className="marquee-title">Dream Companies</h3>
 
       <div className="marquee-wrapper">
