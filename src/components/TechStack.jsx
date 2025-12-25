@@ -32,7 +32,7 @@ const techData = [
 
 
   { name: "Python", icon: "python", category: "AI/ML" },
-  { name: "OpenAI", icon: "openai", category: "AI/ML"  }
+  
 ];
 
 export default function TechStack() {

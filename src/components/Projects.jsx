@@ -1,10 +1,14 @@
 import project1img1 from "../assets/project1img1.jpg";
 import project1img2 from "../assets/project1img2.jpg";
 import project1img3 from "../assets/project1img3.jpg";
-import project2img1 from "../assets/project2img1.jpg";
+import project2img1 from "../assets/project2img1.png";
 import project2img2 from "../assets/project2img2.jpg";
 import project2img3 from "../assets/project2img3.jpg";
 import project2img4 from "../assets/project2img4.jpg";
+import project3img1 from "../assets/project3img1.png"
+import project3img2 from "../assets/project3img2.png"
+import project3img3 from "../assets/project3img3.png"
+
 
 
 import { useState } from "react";
@@ -34,13 +38,16 @@ const projectsData = [
     ],
   },
   {
-    title: "Project Three",
+    title: "SomAIya – AI Campus Assistant",
     description:
-      "A feature-rich project demonstrating frontend logic, UI design, and interaction.",
+      "SomAIya is an AI-powered campus assistant built for Somaiya University that works like a personalized ChatGPT. Students can ask questions about campus life, academics, facilities, events, and procedures and instantly get accurate answers—eliminating the need to search multiple websites or portals.",
     images: [
-      "/projects/project3-1.png",
-      "/projects/project3-2.png",
-      "/projects/project3-3.png",
+      
+     project3img1,
+     project3img2,
+     project3img3,
+
+
     ],
   },
 ];

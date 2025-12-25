@@ -45,7 +45,7 @@ export default function Navbar() {
       {/* RIGHT (DESKTOP = ALL, MOBILE = ONLY 2) */}
       <div className="nav-right">
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/neelstar8"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,7 +53,7 @@ export default function Navbar() {
         </a>
 
         <a
-          href="https://linkedin.com/in/yourusername"
+          href="https://www.linkedin.com/in/neel-gadekar-018248243/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -61,7 +61,7 @@ export default function Navbar() {
         </a>
 
         <a
-          href="mailto:youremail@gmail.com"
+          href="mailto:neelgadekar9@gmail.com"
           className="hide-on-mobile"
         >
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" />
@@ -80,10 +80,10 @@ export default function Navbar() {
             <a href="https://github.com/neelstar8">
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" />
             </a>
-            <a href="https://linkedin.com/in/yourusername">
+            <a href="https://www.linkedin.com/in/neel-gadekar-018248243/">
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" />
             </a>
-            <a href="mailto:youremail@gmail.com">
+            <a href="mailto:neelgadekar9@gmail.com">
               <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" />
             </a>
           </div>
