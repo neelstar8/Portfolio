@@ -100,3 +100,11 @@
   }
 }
 
+
+/* Hide typing text on mobile */
+@media (max-width: 768px) {
+  .hero-side-text {
+    display: none;
+  }
+}
+

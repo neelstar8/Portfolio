@@ -23,10 +23,13 @@ const techData = [
   { name: "MongoDB", icon: "mongodb", category: "Database" },
   { name: "MySQL", icon: "mysql", category: "Database" },
   { name: "Firebase", icon: "firebase", category: "Database" },
+{ name: "REST API", icon: "fastapi", category: "Backend" },
 
   { name: "Git", icon: "git", category: "Tools" },
   { name: "GitHub", icon: "github", category: "Tools" },
   { name: "Postman", icon: "postman", category: "Tools" },
+
+
 
   { name: "Python", icon: "python", category: "AI/ML" },
   { name: "OpenAI", icon: "openai", category: "AI/ML"  }

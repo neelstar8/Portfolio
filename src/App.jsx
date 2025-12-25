@@ -36,7 +36,6 @@ function App() {
           <Projects />
           <WorkTimeline />
 
-          <Awards />
           <Footer />
 
           {/* FLOATING CONTACT */}
