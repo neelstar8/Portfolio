@@ -108,3 +108,30 @@
   }
 }
 
+/* =========================
+   MOBILE HERO FIX
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    perspective: none; /* prevent visual shift */
+  }
+
+  .hero-layout {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 16px;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;        /* TRUE CENTER */
+    transform: none !important;
+  }
+
+  .image-frame,
+  .name-box,
+  .hero-content {
+    transform: none !important;
+  }
+}

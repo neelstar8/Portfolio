@@ -8,33 +8,39 @@ export default function Hero() {
   const cardRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
+  if (window.innerWidth <= 768) return; // 🔥 MOBILE FIX
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+  const card = cardRef.current;
+  const rect = card.getBoundingClientRect();
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
 
-    const rotateX = -(y - centerY) / 20;
-    const rotateY = (x - centerX) / 20;
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
 
-    card.style.transform = `
-      rotateX(${rotateX}deg)
-      rotateY(${rotateY}deg)
-      translateZ(10px)
-    `;
-  };
+  const rotateX = -(y - centerY) / 20;
+  const rotateY = (x - centerX) / 20;
+
+  card.style.transform = `
+    rotateX(${rotateX}deg)
+    rotateY(${rotateY}deg)
+    translateZ(10px)
+  `;
+};
+
 
   const handleMouseLeave = () => {
-    const card = cardRef.current;
-    card.style.transform = `
-      rotateX(0deg)
-      rotateY(0deg)
-      translateZ(0px)
-    `;
-  };
+  if (window.innerWidth <= 768) return;
+
+  const card = cardRef.current;
+  card.style.transform = `
+    rotateX(0deg)
+    rotateY(0deg)
+    translateZ(0px)
+  `;
+};
+
 
   return (
     <section id="home" className="hero hero-layout">
