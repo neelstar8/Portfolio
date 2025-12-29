@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import "./TechStack.css";
+import Reveal from "./Reveal";
 
 const categories = [
   "All",
@@ -7,7 +9,7 @@ const categories = [
   "Backend",
   "Database",
   "Tools",
-  "AI/ML"
+  "AI/ML",
 ];
 
 const techData = [
@@ -19,20 +21,17 @@ const techData = [
   { name: "NodeJS", icon: "nodejs", category: "Backend" },
   { name: "Express", icon: "express", category: "Backend" },
   { name: "Java", icon: "java", category: "Backend" },
+  { name: "REST API", icon: "fastapi", category: "Backend" },
 
   { name: "MongoDB", icon: "mongodb", category: "Database" },
   { name: "MySQL", icon: "mysql", category: "Database" },
   { name: "Firebase", icon: "firebase", category: "Database" },
-{ name: "REST API", icon: "fastapi", category: "Backend" },
 
   { name: "Git", icon: "git", category: "Tools" },
   { name: "GitHub", icon: "github", category: "Tools" },
   { name: "Postman", icon: "postman", category: "Tools" },
 
-
-
   { name: "Python", icon: "python", category: "AI/ML" },
-  
 ];
 
 export default function TechStack() {
@@ -44,39 +43,64 @@ export default function TechStack() {
       : techData.filter((t) => t.category === active);
 
   return (
-    <section className="techstack">
-      <h2>
-        My <span>Tech Stack</span>
-      </h2>
-      <p className="subtitle">
-        A comprehensive collection of technologies I’ve mastered through
-        projects, internships, and continuous learning.
-      </p>
+    <Reveal>
+      <section className="techstack">
+        <h2>
+          My <span>Tech Stack</span>
+        </h2>
 
-      {/* FILTER PILLS */}
-      <div className="filters">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            className={active === cat ? "active" : ""}
-            onClick={() => setActive(cat)}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+        <p className="subtitle">
+          A comprehensive collection of technologies I’ve mastered through
+          projects, internships, and continuous learning.
+        </p>
 
-      {/* GRID */}
-      <div className="tech-grid">
-        {filtered.map((tech) => (
-          <div className="tech-card" key={tech.name}>
-            <img
-              src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-original.svg`}
-              alt={tech.name}
-            />
-          </div>
-        ))}
-      </div>
-    </section>
+        {/* FILTERS */}
+        <div className="filters">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={active === cat ? "active" : ""}
+              onClick={() => setActive(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* GRID */}
+        <motion.div
+          className="tech-grid"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.08,
+              },
+            },
+          }}
+          initial="hidden"
+          animate="visible"
+        >
+          {filtered.map((tech) => (
+            <motion.div
+              key={tech.name}
+              className="tech-card"
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.45, ease: "easeOut" }}
+              whileHover={{ scale: 1.12 }}
+            >
+              <img
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-original.svg`}
+                alt={tech.name}
+                loading="lazy"
+              />
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+    </Reveal>
   );
 }

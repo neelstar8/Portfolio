@@ -2,6 +2,7 @@ import { useRef } from "react";
 import "./Hero.css";
 import profileImg from "../assets/profile12.jpg";
 import TypingText from "./TypingText";
+import Reveal from "./Reveal";
 
 export default function Hero() {
   const cardRef = useRef(null);
@@ -38,31 +39,35 @@ export default function Hero() {
   return (
     <section id="home" className="hero hero-layout">
       {/* LEFT: CARD */}
-      <div
-        ref={cardRef}
-        className="hero-card"
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className="image-frame">
-          <img src={profileImg} alt="Profile" />
-        </div>
+      <Reveal>
+        <div
+          ref={cardRef}
+          className="hero-card"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="image-frame">
+            <img src={profileImg} alt="Profile" />
+          </div>
 
-        <div className="name-box">Neel Santosh Gadekar</div>
+          <div className="name-box">Neel Santosh Gadekar</div>
 
-        <div className="hero-content">
-          <h4>AIML ENTHUSIAST</h4>
-          <p>
-            A curious developer who enjoys turning ideas into clean, functional,
-            and meaningful products.
-          </p>
+          <div className="hero-content">
+            <h4>AIML ENTHUSIAST</h4>
+            <p>
+              A curious developer who enjoys turning ideas into clean,
+              functional, and meaningful products.
+            </p>
+          </div>
         </div>
-      </div>
+      </Reveal>
 
       {/* RIGHT: TYPING TEXT */}
-      <div className="hero-side-text">
-        <TypingText text="This Is Neel Santosh Gadekar Check My Profile" />
-      </div>
+      <Reveal delay={0.2}>
+        <div className="hero-side-text">
+          <TypingText text="This Is Neel Santosh Gadekar Check My Profile" />
+        </div>
+      </Reveal>
     </section>
   );
 }

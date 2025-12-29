@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import "./WorkTimeline.css";
 
 const data = [
@@ -11,7 +12,7 @@ const data = [
       "Began my tech journey by learning C programming alongside HTML, CSS, and JavaScript, laying a solid foundation in problem-solving and web technologies.",
   },
   {
-    year: "2023", 
+    year: "2023",
     side: "left",
     title: "My First Hackthon",
     subtitle: "Chat application",
@@ -35,6 +36,25 @@ const data = [
       "Diving into the world of Artificial Intelligence and Machine Learning, experimenting with models, data, and algorithms to understand intelligent systems.",
   },
 ];
+
+/* 🔥 Animation variants */
+const leftVariant = {
+  hidden: { opacity: 0, x: -80 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const rightVariant = {
+  hidden: { opacity: 0, x: 80 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function WorkTimeline() {
   const lineRef = useRef(null);
@@ -77,12 +97,19 @@ export default function WorkTimeline() {
           <div className={`timeline-item ${item.side}`} key={i}>
             <div className="timeline-dot" style={{ top: i * 180 + 60 }} />
 
-            <div className="timeline-card">
+            {/* 🔥 Animated Card */}
+            <motion.div
+              className="timeline-card"
+              variants={item.side === "left" ? leftVariant : rightVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <h3>{item.title}</h3>
               <span>{item.subtitle}</span>
               <p>{item.description}</p>
               <small>{item.year}</small>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
