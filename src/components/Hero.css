@@ -67,16 +67,18 @@
 
 
 .hero-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 420px; /* 👈 LOCK RIGHT SIDE */
   align-items: center;
   gap: 80px;
 }
 
-/* RIGHT SIDE TEXT */
+/* typing text container */
 .hero-side-text {
-  display: flex;
-  align-items: center;
-  min-height: 200px;
+  width: 420px;              /* 👈 fixed width */
+  min-height: 40px;          /* prevents vertical jump */
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .typing-text {

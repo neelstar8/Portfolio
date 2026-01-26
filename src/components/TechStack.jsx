@@ -40,7 +40,10 @@ export default function TechStack() {
   const filtered =
     active === "All"
       ? techData
-      : techData.filter((t) => t.category === active);
+      : techData.filter(
+          (t) =>
+            t.category.toLowerCase() === active.toLowerCase()
+        );
 
   return (
     <Reveal>
@@ -70,35 +73,31 @@ export default function TechStack() {
         {/* GRID */}
         <motion.div
           className="tech-grid"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.08,
-              },
-            },
-          }}
-          initial="hidden"
-          animate="visible"
+          layout
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
         >
-          {filtered.map((tech) => (
-            <motion.div
-              key={tech.name}
-              className="tech-card"
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-              whileHover={{ scale: 1.12 }}
-            >
-              <img
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-original.svg`}
-                alt={tech.name}
-                loading="lazy"
-              />
-            </motion.div>
-          ))}
+          {filtered.length > 0 ? (
+            filtered.map((tech) => (
+              <motion.div
+                key={tech.name}
+                className="tech-card"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+                whileHover={{ scale: 1.12 }}
+              >
+                <img
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech.icon}/${tech.icon}-original.svg`}
+                  alt={tech.name}
+                  loading="lazy"
+                />
+              </motion.div>
+            ))
+          ) : (
+            <p className="empty-text">No technologies found</p>
+          )}
         </motion.div>
       </section>
     </Reveal>

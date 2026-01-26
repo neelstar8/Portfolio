@@ -71,8 +71,9 @@ export default function Hero() {
       {/* RIGHT: TYPING TEXT */}
       <Reveal delay={0.2}>
         <div className="hero-side-text">
-          <TypingText text="This Is Neel Santosh Gadekar Check My Profile" />
-        </div>
+  <TypingText text="This Is Neel Santosh Gadekar Check My Profile" />
+</div>
+
       </Reveal>
     </section>
   );

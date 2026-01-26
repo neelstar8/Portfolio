@@ -31,9 +31,9 @@ function App() {
 
           <SectionTitle text="Technologies I Know" />
           <TechStack />
-
+ <Projects />
           <TechMarquee />
-          <Projects />
+         
           <WorkTimeline />
 
           <Footer />

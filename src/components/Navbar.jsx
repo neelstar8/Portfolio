@@ -30,10 +30,21 @@ export default function Navbar() {
         </button>
 
         <ul className="nav-left">
-          <li onClick={() => scrollToSection("home")}>Home</li>
-          <li onClick={() => scrollToSection("projects")}>Projects</li>
-          <li onClick={() => scrollToSection("work")}>Work</li>
-          <li onClick={() => scrollToSection("awards")}>Awards</li>
+          <li onClick={() => scrollToSection("home")}>
+            <span className="nav-tab active">Home</span>
+          </li>
+
+          <li onClick={() => scrollToSection("projects")}>
+            <span className="nav-tab">Projects</span>
+          </li>
+
+          <li onClick={() => scrollToSection("work")}>
+            <span className="nav-tab">Work</span>
+          </li>
+
+          <li onClick={() => scrollToSection("awards")}>
+            <span className="nav-tab">Awards</span>
+          </li>
         </ul>
       </div>
 
@@ -42,14 +53,17 @@ export default function Navbar() {
         <NavClock />
       </div>
 
-      {/* RIGHT (DESKTOP = ALL, MOBILE = ONLY 2) */}
+      {/* RIGHT */}
       <div className="nav-right">
         <a
           href="https://github.com/neelstar8"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" />
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+            alt="GitHub"
+          />
         </a>
 
         <a
@@ -57,14 +71,20 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" />
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg"
+            alt="LinkedIn"
+          />
         </a>
 
         <a
           href="mailto:neelgadekar9@gmail.com"
           className="hide-on-mobile"
         >
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" />
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg"
+            alt="Gmail"
+          />
         </a>
       </div>
 
@@ -78,13 +98,24 @@ export default function Navbar() {
 
           <div className="mobile-icons">
             <a href="https://github.com/neelstar8">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+                alt="GitHub"
+              />
             </a>
+
             <a href="https://www.linkedin.com/in/neel-gadekar-018248243/">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg"
+                alt="LinkedIn"
+              />
             </a>
+
             <a href="mailto:neelgadekar9@gmail.com">
-              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" />
+              <img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg"
+                alt="Gmail"
+              />
             </a>
           </div>
         </div>
